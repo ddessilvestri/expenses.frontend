@@ -1,6 +1,6 @@
 // import { ActionCreators } from "../app/expensesReducer";
 import { setExpenses, newExpense, editExpense, deleteExpense } from '../app/expensesSlice';
-
+import { setExpensesError, editExpenseError,newExpenseError,deleteExpenseError } from '../app/expensesSlice';
 import axios from 'axios';
 
 
@@ -14,7 +14,7 @@ export const GetExpenses = async (dispatch) => {
         dispatch(setExpenses(data));
     }
     catch{
-        console.log('Error');
+        dispatch(setExpensesError());
     }
 }
 
@@ -24,7 +24,8 @@ export const NewExpense = async(dispatch,expense) =>{
         const { data } = await axiosInstance.post('',expense);
         dispatch(newExpense(data));
     } catch{
-        console.log('Error!');
+        dispatch(newExpenseError());
+
     }
 }
 
@@ -34,7 +35,7 @@ export const EditExpense = async(dispatch, expense) =>{
 
         dispatch(editExpense(expense));
     }catch{
-        console.log('Error!');
+        dispatch(editExpenseError());
     }
 }
 
@@ -43,6 +44,6 @@ export const DeleteExpence  = async (dispatch,expense) => {
         await axiosInstance.delete('', { data : {...expense} } );
         dispatch(deleteExpense(expense));
     }catch (e){
-        console.log('Error',e);
+        dispatch(deleteExpenseError());
     }
 }
