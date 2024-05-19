@@ -44,3 +44,5 @@ const ListRow = ({expense}) =>{
     </> 
     )
 }
+
+export default ExpenseList;

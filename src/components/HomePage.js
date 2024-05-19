@@ -1,7 +1,6 @@
 import { ToastContainer } from "react-toastify";
-import { ExpenseForm } from "./components/ExpenseForm";
-import { ExpenseList } from "./components/ExpenseList";
-
+import { ExpenseForm } from "./ExpenseForm";
+import { ExpenseList } from "./ExpenseList"; 
 export const HomePage = () => {
   return (
     <div style={{width: '60%', margin:'auto'}}>

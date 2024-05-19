@@ -68,3 +68,5 @@ export const ExpenseForm = ({expense, setIsEditing}) => {
     </Form>
   )
 }
+
+export default ExpenseForm;
