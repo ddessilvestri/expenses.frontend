@@ -1,11 +1,10 @@
-// import { ActionCreators } from "../app/expensesReducer";
 import { setExpenses, newExpense, editExpense, deleteExpense } from '../app/expensesSlice';
 import { setExpensesError, editExpenseError,newExpenseError,deleteExpenseError } from '../app/expensesSlice';
 import axios from 'axios';
 
 
 const axiosInstance = axios.create({
-    baseURL:'https://localhost:7063/Expenses'
+    baseURL:`${process.env.REACT_APP_BASE_URL}/Expenses`
 });
 export const GetExpenses = async (dispatch) => {
     try{
