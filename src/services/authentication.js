@@ -7,10 +7,10 @@ const axiosInstance = axios.create({
 
 export const SignUp = async(dispatch,credentials) =>{
     try{
-        const { data } = await axios.post('/signup',credentials);
+        const { data } = await axiosInstance.post('/signup',credentials);
         dispatch(userAuthenticated(data));
-    }catch{
-        console.log("Error!");
+    }catch(e){
+        console.log("Error!",e);
     }
 }
 

@@ -1,12 +1,11 @@
-import { ToastContainer } from "react-toastify";
-import { ExpenseForm } from "./components/ExpenseForm";
-import { ExpenseList } from "./components/ExpenseList";
 import SignInPage from "./components/SignInPage";
+import  SignUpPage  from "./components/SignUpPage";
 
 
 function App(){
   return (
-    <SignInPage/>
+    <SignUpPage/>
+    // <SignInPage/>
     // <div style={{width: '60%', margin:'auto'}}>
     //  <ToastContainer/>
     //   <h3>New Expense</h3>
