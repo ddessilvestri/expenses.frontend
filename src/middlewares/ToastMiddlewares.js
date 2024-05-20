@@ -13,9 +13,9 @@ const ToastMiddleware = () => next => action => {
         case deleteExpense.type:
             toast.success('Expense deleted successfully');
             break;    
-        case setExpensesError.type:
-            toast.error('Error loading expenses');
-            break;
+        // case setExpensesError.type:
+        //     toast.error('Error loading expenses');
+        //     break;
         case editExpenseError.type:
             toast.error('Error editing expense');
             break;        

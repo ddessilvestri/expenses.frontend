@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import HomePage from "./components/HomePage";
 import { useEffect } from "react";
 import { userAuthenticated } from "./app/authenticationSlice";
+import Navbar from "./components/Navbar";
 
 function App() {
   const { isLoggedIn } = useSelector(state => state.authenticationSlice);
@@ -20,6 +21,7 @@ function App() {
   
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
         <Route path='/' element={isLoggedIn ? <HomePage /> : <SignInPage />} />
         <Route path='/signup' element={isLoggedIn ? <Navigate to='/' /> : <SignUpPage />} />

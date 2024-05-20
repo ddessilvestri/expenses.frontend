@@ -25,7 +25,6 @@ export const ExpenseForm = ({expense, setIsEditing}) => {
         onSubmit={ event => {
             event.preventDefault();
             if (isNewExpense){
-                console.log("new",amount,description);
                 NewExpense(dispatch, {description:description,amount:amount});
 
             }else{
@@ -35,20 +34,20 @@ export const ExpenseForm = ({expense, setIsEditing}) => {
         }}
     >
         <Row>
-            <Col key='desc'>
-                <Form.Label key='desc-label'>Description</Form.Label>
+            <Col>
+                <Form.Label>Description</Form.Label>
                 <Form.Control 
-                    key='desc-control'
                     as='select' 
                     onChange={event=> setDescription(event.target.value)}
                 >
-                    {descriptions.map(d=> <option>{d}</option>)}
+                    {descriptions.map((d, index) => <option key={index}>{d}</option>)}
+
 
                 </Form.Control>
             </Col>
-            <Col key='amount'>
-                <Form.Label key='amount-label'>Amount</Form.Label>
-                <Form.Control key='amount-control' type='number' step='0.01' placeholder={amount} 
+            <Col>
+                <Form.Label>Amount</Form.Label>
+                <Form.Control type='number' step='0.01' placeholder={amount} 
                     onChange={event => setAmount(event.target.value)}
                 ></Form.Control>
             </Col>
