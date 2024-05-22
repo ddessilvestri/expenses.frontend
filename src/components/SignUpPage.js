@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { SignUp } from '../services/authentication';
-import { Form, FormControl, InputGroup,Button } from 'react-bootstrap'
+import { Form, FormControl, InputGroup,Button } from 'react-bootstrap';
+import ThirdPartySignInsComponent  from './ThirdPartySignInsComponent';
 
 export const SignUpPage = () => {
 
@@ -42,6 +43,7 @@ export const SignUpPage = () => {
                 Sign Up
             </Button>
         </Form>
+        <ThirdPartySignInsComponent/>
     </div>
   )
 };
