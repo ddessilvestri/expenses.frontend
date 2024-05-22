@@ -8,14 +8,16 @@ export const SignInPage = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
+    const [externalId, setExternalId] = useState('');
+    const [externalType, setExternalType] = useState('');
     const dispatch = useDispatch();
 
   return (
     <div style={{width:'30rem',margin:'auto',paddingTop:'8px'}}>
         <Form onSubmit={event=> {
             event.preventDefault();
-            SignIn(dispatch,{username,password,email});
+            SignIn(dispatch,{username,password,email,externalId,externalType});
         }}>
             <h4 style={{textAlign:'center'}}>Welcome back</h4>
             <InputGroup className='mb-3'>

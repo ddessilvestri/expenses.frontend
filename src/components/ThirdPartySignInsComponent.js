@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 
 const ThirdPartySignInsComponent = () => {
   const dispatch = useDispatch();
-  console.log("process.env.REACT_APP_CLIENT_ID",process.env.REACT_APP_CLIENT_ID);
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
       <GoogleLogin
